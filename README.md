@@ -1,4 +1,4 @@
-Intro
+# Intro
 
 Welcome to the GitHub repository for our paper 'CT_CL: A Cross-Language Benchmark for Matching Patients to Clinical Trials'.
 
@@ -8,7 +8,7 @@ The topics translated and validated in seven languages (Basque, Bengali, Greek, 
 
 The repository contains a simple quicksart how-to example showing how topics for each of the languages can be read into a Python structure. More comprehensive examples (notebooks) can be found in the 'examples' subfolder. Full code to reproduce our experiments from the paper is in the 'experiments' subfolder. Running the full experiments will require running the indexing jobs first (see folder 'indexing'), to create persistent indices in the 'indices' subfolder. We attach a requirements file, which should help with setting up the environment for running the experiments.
 
-Quickstart
+# Quickstart
 Translated topics can be read in Python, the same way one would read the original topics of the TREC CT 2021 collection. They are formatted with XML. If you check out the repository, elow example code snippet executed from the root folder reads the XML and writes a tsv queries stripped from interpunction, which is the format to use in an experiment with (for example) Pyserini BoW statistical models. 
 
 
@@ -31,14 +31,14 @@ def read_topics(f):
         topicDict["text"]=topic.firstChild.nodeValue.strip()
         topicList.append(topicDict)
     return topicList
-# read Spanish topics - ES language code
+#read Spanish topics - ES language code
 t=read_topics('./topics/topics2021_es.xml')
-# save spanish topics line by line
+#save spanish topics line by line
 save_topics_as_csv(t, 'out_es.tsv')
 
-Key dependencies and requirements.txt
+# Key dependencies and requirements.txt
 Key dependencies for our experimental code include: pytorch, transformers, sentence transformers, faiss, pyserini, panda, numpy, ir_datasets, and nltk. We include the requirements.txt if you wish to replicate our python environment.
 
-Evaluating runs
+# Evaluating runs
 Our experimental code generates TREC-formatted runs. If you like to evaluate the runs we recommend using ir_measures package. For convenience, we include human judgements (identical to those used in TREC CT 2021) in the 'qrels' subfolder of this repository.
 
