@@ -14,6 +14,7 @@ Translated topics can be read in Python, the same way one would read the origina
 ```python
 import csv
 import xml
+
 def save_topics_as_csv(queries, out):
     with open(out, 'w', newline='') as tsvfile:
         writer = csv.writer(tsvfile, delimiter='\t', lineterminator='\n')
@@ -31,8 +32,10 @@ def read_topics(f):
         topicDict["text"]=topic.firstChild.nodeValue.strip()
         topicList.append(topicDict)
     return topicList
+
 #read Spanish topics - ES language code
 t=read_topics('./topics/topics2021_es.xml')
+
 #save spanish topics line by line
 save_topics_as_csv(t, 'out_es.tsv')
 ```
