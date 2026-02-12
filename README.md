@@ -40,10 +40,10 @@ t=read_topics('./topics/topics2021_es.xml')
 save_topics_as_csv(t, 'out_es.tsv')
 ```
 # A note on running the code for our experiments
-
 Running the full experiments will require running the indexing jobs first (see folder 'indexing'), to create persistent indices in the 'indices' subfolder. We attach a requirements file, which should help with setting up the environment for running the experiments (see details below). Running the experiments will save TREC-formatted runs into the 'results' subfolder. 
 
 # Key dependencies and requirements.txt
+We used Python 3.10.13. 
 Key dependencies for our experimental code include: pytorch, transformers, sentence transformers, faiss, pyserini, panda, numpy, ir_datasets, and nltk. We include the requirements.txt if you wish to replicate our python environment.
 
 # Evaluating runs
