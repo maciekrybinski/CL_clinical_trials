@@ -11,7 +11,7 @@ The repository contains a simple quicksart how-to example showing how topics for
 # Quickstart
 Translated topics can be read in Python, the same way one would read the original topics of the TREC CT 2021 collection. They are formatted with XML. If you check out the repository, elow example code snippet executed from the root folder reads the XML and writes a tsv queries stripped from interpunction, which is the format to use in an experiment with (for example) Pyserini BoW statistical models. 
 
-
+```python
 import csv
 import xml
 def save_topics_as_csv(queries, out):
@@ -35,6 +35,7 @@ def read_topics(f):
 t=read_topics('./topics/topics2021_es.xml')
 #save spanish topics line by line
 save_topics_as_csv(t, 'out_es.tsv')
+```
 
 # Key dependencies and requirements.txt
 Key dependencies for our experimental code include: pytorch, transformers, sentence transformers, faiss, pyserini, panda, numpy, ir_datasets, and nltk. We include the requirements.txt if you wish to replicate our python environment.
